@@ -1,0 +1,6 @@
+include 'common'
+include 'service'
+include 'webapp'
+
+rootProject.name = 'scompo-timelogger'
+
