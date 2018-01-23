@@ -65,9 +65,9 @@ public class OauthConfiguration extends WebSecurityConfigurerAdapter {
 		oAuth2Filter.setTokenServices(tokenServices);
 		return oAuth2Filter;
 	}
-	
+
 	@Bean
 	public OrderedRequestContextFilter requestContextFilter() {
-	    return new OrderedRequestContextFilter();
+		return new OrderedRequestContextFilter();
 	}
 }

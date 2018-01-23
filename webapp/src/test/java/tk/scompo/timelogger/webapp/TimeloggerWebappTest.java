@@ -4,6 +4,7 @@ import org.junit.*;
 import org.junit.runner.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -19,6 +20,7 @@ public class TimeloggerWebappTest {
 	private MockMvc mvc;
 
 	@Test
+	@WithMockUser(roles = "USER")
 	public void testMain() throws Exception {
 		this.mvc.perform(get("/")).andExpect(status().isOk())
 				.andExpect(content().string(containsString("<h1>scompo-timelogger webapp</h1>")));
