@@ -10,14 +10,10 @@ jobs:
                         - checkout
                         - run: gradle check
                         - run: gradle jacocoTestReport
-                        - run: mkdir -p test-results/common
-                        - run: mkdir -p test-results/webapp
-                        - run: cp common/build/test-results/test/*.xml test-results/common
-                        - run: cp webapp/build/test-results/test/*.xml test-results/webapp
+                        - run: mkdir -p test-results
+                        - run: cp build/test-results/test/*.xml test-results
                         - store_test_results:
                             path: test-results
                         - store_artifacts:
-                            path: common/build/reports
-                        - store_artifacts:
-                            path: webapp/build/reports
+                            path: build/reports
 

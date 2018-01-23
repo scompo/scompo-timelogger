@@ -1,5 +1,0 @@
-include 'common'
-include 'webapp'
-
-rootProject.name = 'scompo-timelogger'
-
