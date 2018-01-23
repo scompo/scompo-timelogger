@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
 <title>scompo-timelogger webapp</title>
 <body>
 	<h1>scompo-timelogger webapp</h1>
+	<div sec:authorize="!isAuthenticated()">
+		<a href="/login">Login with google</a>
+	</div>
+	<div sec:authorize="isAuthenticated()">
+		<p>Hello: <span sec:authentication="name">User</span></p>
+	</div>
 </body>
 </html>
