@@ -15,5 +15,7 @@ class TimeloggerWebappWebConfiguration extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("home");
+		registry.addViewController("/config").setViewName("config");
+		registry.addViewController("/today").setViewName("today");
 	}
 }
