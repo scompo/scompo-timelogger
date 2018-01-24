@@ -1,12 +1,10 @@
 package tk.scompo.timelogger.webapp;
 
-import java.time.ZonedDateTime;
-
 public class ActivityFilter {
 
 	private String username;
 
-	private Interval<ZonedDateTime> interval;
+	private LocalDateTimeInterval interval;
 
 	public String getUsername() {
 		return username;
@@ -16,11 +14,11 @@ public class ActivityFilter {
 		this.username = username;
 	}
 
-	public Interval<ZonedDateTime> getInterval() {
+	public LocalDateTimeInterval getInterval() {
 		return interval;
 	}
 
-	public void setInterval(Interval<ZonedDateTime> interval) {
+	public void setInterval(LocalDateTimeInterval interval) {
 		this.interval = interval;
 	}
 

@@ -20,9 +20,10 @@ public class ActivityMapRepository implements ActivityRepository {
 		if (data.containsKey(filter.getUsername())) {
 			synchronized (data) {
 				activities = data.get(filter.getUsername()).parallelStream()
-						.filter(x -> x.getTime().isAfter(filter.getInterval().getFrom())
-								&& x.getTime().isBefore(filter.getInterval().getTo()))
-						.sorted((a, b) -> a.getTime().compareTo(b.getTime())).collect(Collectors.toList());
+						.filter(x -> x.getInterval().getFrom().isAfter(filter.getInterval().getFrom())
+								&& x.getInterval().getFrom().isBefore(filter.getInterval().getTo()))
+						.sorted((a, b) -> a.getInterval().getFrom().compareTo(b.getInterval().getFrom()))
+						.collect(Collectors.toList());
 			}
 		}
 		return activities;

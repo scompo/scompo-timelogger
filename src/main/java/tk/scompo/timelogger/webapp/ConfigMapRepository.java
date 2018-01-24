@@ -25,7 +25,13 @@ public class ConfigMapRepository implements ConfigRepository {
 		return config;
 	}
 
-	private Config unset() {
+	/**
+	 * Returns an unset reasonable {@link Config}. Start time at 8:30. End time at
+	 * 17:30. Timezone at the server default timezone.
+	 * 
+	 * @return an unset reasonable {@link Config}.
+	 */
+	public static Config unset() {
 		Config config = new Config();
 		config.setTimeZone(TimeZone.getDefault().getDisplayName());
 		config.setWorkStart(LocalTime.of(8, 30));

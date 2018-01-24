@@ -1,0 +1,51 @@
+/* body */
+
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* tables */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table td, table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #ADB7AD;
+	color: white;
+}
+
+/* activity table */
+
+.activity-table tr>*:nth-child(1) {
+	width: 20%;
+}
+
+.activity-table tr>*:nth-child(2) {
+	width: 20%;
+}
+
+.activity-table tr>*:nth-child(3) {
+	width: 50%;
+}
+
+.activity-table tr>*:nth-child(4) {
+	width: 10%;
+}
