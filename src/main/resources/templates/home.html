@@ -4,7 +4,13 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1.0">
 <title>scompo-timelogger webapp</title>
+<link
+	rel="stylesheet"
+	th:href="@{/css/style.css}" />
 <body>
 	<h1>scompo-timelogger webapp</h1>
 	<div sec:authorize="!isAuthenticated()">
@@ -21,7 +27,7 @@
 				value="logout">
 		</form>
 
-
+		<a th:href="@{/config}">configuration</a> <a th:href="@{/today}">today</a>
 	</div>
 </body>
 </html>

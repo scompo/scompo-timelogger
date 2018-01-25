@@ -37,7 +37,7 @@ public class OauthConfiguration extends WebSecurityConfigurerAdapter {
 				// conf
 				.authorizeRequests()
 				// all for base resources.
-				.antMatchers("/", "/**.html", "/**.js").permitAll()
+				.antMatchers("/", "/**.html", "/**.js", "/**.css").permitAll()
 				// all other resources authenticated.
 				.anyRequest().authenticated()
 				// use logout stuff.
