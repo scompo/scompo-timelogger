@@ -51,6 +51,24 @@ public class TimeloggerWebappTest {
 				.andExpect(content().string(containsString("<title>scompo-timelogger webapp - config</title>")));
 	}
 
+	@Test
+	public void testDailyUnauthorized() throws Exception {
+		this.mvc.perform(get("/daily")).andExpect(status().isForbidden());
+	}
+
+	@Test
+	public void testDailyAutorized() throws Exception {
+		this.mvc.perform(get("/daily").with(testUser())).andExpect(status().isOk())
+				.andExpect(content().string(containsString("<title>scompo-timelogger webapp - daily</title>")));
+	}
+
+	@Test
+	public void testDailyAutorizedWithDateParam() throws Exception {
+		this.mvc.perform(get("/daily?date=28/01/2018").with(testUser())).andExpect(status().isOk())
+				.andExpect(content().string(containsString("<title>scompo-timelogger webapp - daily</title>")))
+				.andExpect(content().string(containsString("28/01/2018")));
+	}
+
 	private static RequestPostProcessor testUser() {
 		return user("testUser").roles("USER");
 	}
