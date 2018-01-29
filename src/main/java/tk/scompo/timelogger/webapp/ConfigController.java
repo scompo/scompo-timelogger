@@ -2,6 +2,7 @@ package tk.scompo.timelogger.webapp;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ public class ConfigController {
 		Config find = configRepository.find(authenticationFacade.getAuthentication().getName());
 		Map<String, Object> model = new HashMap<>();
 		model.put("conf", find);
+		model.put("timezones", TimeZone.getAvailableIDs());
 		return new ModelAndView("config", model);
 	}
 

@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html
-	xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8">
-<meta
-	name="viewport"
-	content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>scompo-timelogger webapp - config</title>
 <body>
-	<form
-		th:object="${conf}"
-		th:action="@{/config}"
-		method="post">
-		<input
-			type="text"
-			th:field="${conf.timeZone}"
-			th:value="${conf.timeZone}">
-		<input
-			type="time"
-			th:field="${conf.workStart}"
-			th:value="${conf.workStart}">
-		<input
-			type="time"
-			th:field="${conf.workEnd}"
-			th:value="${conf.workEnd}">
-		<input
-			type="submit"
-			value="save">
+	<form th:object="${conf}" th:action="@{/config}" method="post">
+		<input type="text" th:field="${conf.timeZone}"
+			th:value="${conf.timeZone}"> <input type="time"
+			th:field="${conf.workStart}" th:value="${conf.workStart}"> <input
+			type="time" th:field="${conf.workEnd}" th:value="${conf.workEnd}">
+		<input type="submit" value="save">
 	</form>
 </body>
 </html>

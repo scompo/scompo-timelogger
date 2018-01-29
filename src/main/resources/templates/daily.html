@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>scompo-timelogger webapp - daily</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<body>
+	<h1>
+		Activities for: <span th:text="${today}">10/10/2010</span>
+	</h1>
+	<div class="statistics">
+		<h1>Statistics:</h1>
+		<ul>
+			<li>Working hours:<span th:text="${stats.workingHours}">08:00</span></li>
+			<li>Worked hours:<span th:text="${stats.workedHours}">09:00</span></li>
+			<li>Slacking hours:<span th:text="${stats.slackingHours}">01:30</span></li>
+			<li>Overtime hours:<span th:text="${stats.overtimeHours}">01:00</span></li>
+			<li>Total hours:<span th:text="${stats.totalHours}">10:30</span></li>
+		</ul>
+	</div>
+	<div class="log">
+		<h1>Log:</h1>
+		<table th:object="${activities}" class="activity-table">
+			<thead>
+				<tr>
+					<th>Start</th>
+					<th>End</th>
+					<th>Description</th>
+					<th>Slacking</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="activity : ${activities}">
+					<td th:text="${#strings.substring(activity.start,11)}">8:30</td>
+					<td th:text="${#strings.substring(activity.end,11)}">9.30</td>
+					<td th:text="${activity.description}">A description</td>
+					<td th:text="${activity.slacking}">false</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

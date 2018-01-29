@@ -1,11 +1,9 @@
 /* body */
-
 body {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 /* tables */
-
 table {
 	border-collapse: collapse;
 	width: 100%;
@@ -33,7 +31,6 @@ table th {
 }
 
 /* activity table */
-
 .activity-table tr>*:nth-child(1) {
 	width: 20%;
 }
