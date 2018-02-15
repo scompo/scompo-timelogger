@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class TodayControllerTest {
+public class DailyControllerTest {
 
 	private static final LocalDateTime TODAY = LocalDateTime.now();
 	private static final LocalDateTime YESTERDAY = TODAY.minusDays(1);

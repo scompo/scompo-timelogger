@@ -27,6 +27,8 @@ public class DailyController {
 		LocalDate now = dateOrDefault(date, LocalDate.now());
 
 		String today = now.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		String yesterday= now.minusDays(1).format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		String tomorrow= now.plusDays(1).format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
 		List<ActivityDTO> activities = getMockedActivities(now);
 
@@ -34,7 +36,9 @@ public class DailyController {
 
 		Map<String, Object> map = new HashMap<>();
 
+		map.put("yesterday", yesterday);
 		map.put("today", today);
+		map.put("tomorrow", tomorrow);
 		map.put("activities", activities);
 		map.put("stats", stats);
 		return new ModelAndView("daily", map);

@@ -10,6 +10,10 @@
 	<h1>
 		Activities for: <span th:text="${today}">10/10/2010</span>
 	</h1>
+	<div>
+		<a th:href="@{/daily(date=${yesterday})}">Previous</a> <a
+			th:href="@{/daily(date=${tomorrow})}">Next</a>
+	</div>
 	<div class="statistics">
 		<h1>Statistics:</h1>
 		<ul>

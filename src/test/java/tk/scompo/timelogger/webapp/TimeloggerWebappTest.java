@@ -66,7 +66,9 @@ public class TimeloggerWebappTest {
 	public void testDailyAutorizedWithDateParam() throws Exception {
 		this.mvc.perform(get("/daily?date=28/01/2018").with(testUser())).andExpect(status().isOk())
 				.andExpect(content().string(containsString("<title>scompo-timelogger webapp - daily</title>")))
-				.andExpect(content().string(containsString("28/01/2018")));
+				.andExpect(content().string(containsString("28/01/2018")))
+				.andExpect(content().string(containsString("27/01/2018")))
+				.andExpect(content().string(containsString("29/01/2018")));
 	}
 
 	private static RequestPostProcessor testUser() {
